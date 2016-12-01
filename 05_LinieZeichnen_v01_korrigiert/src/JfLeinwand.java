@@ -13,7 +13,7 @@ import javax.swing.event.ChangeListener;
 
 public class JfLeinwand extends JFrame {
 	/**
-	 * 
+	 * Schiffe Versenken
 	 */
 	private static final long serialVersionUID = 1L;
 	
