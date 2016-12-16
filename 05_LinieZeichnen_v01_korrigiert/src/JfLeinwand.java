@@ -15,7 +15,8 @@ public class JfLeinwand extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	ArrayList<WcGraphics> list = new ArrayList<WcGraphics>();
-	Spielfeld spielfeld = new Spielfeld();
+	
+	WcRectangle[][] feld = new WcRectangle[10][10];
 	
 	private JPanel contentPane;
 
@@ -48,8 +49,17 @@ public class JfLeinwand extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+			for (int i = 0; i < feld.length; i++) {
+				for (int j = 0; j < feld[i].length; j++) {
+					feld[i][j] = new WcRectangle(new WcPoint((double) i / feld.length, (double) j / feld.length),
+							new WcPoint(((double) i + 1) / feld.length, ((double) j + 1) / feld.length), null, Color.black);
+					list.add(feld[i][j]);
+				}
+			}
+		
+		
 
-		list.add(spielfeld);
 
 		// modifizierte JLabel-Klasse ------------------------------------------
 		JLabel lbl_malen = new JLabel() {
