@@ -15,7 +15,7 @@ public class JfLeinwand extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	ArrayList<WcGraphics> list = new ArrayList<WcGraphics>();
-	
+	WcContainer conSpielfend = new WcContainer(new WcPoint(0.1, 0.2),new WcPoint(1, 1));
 	Spielfeld spielfeld = new Spielfeld();
 	
 	private JPanel contentPane;
@@ -48,9 +48,10 @@ public class JfLeinwand extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		conSpielfend.add(spielfeld);
 
-
-		list.add(spielfeld);
+		list.add(conSpielfend);
 
 		// modifizierte JLabel-Klasse ------------------------------------------
 		JLabel lbl_malen = new JLabel() {

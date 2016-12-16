@@ -10,8 +10,8 @@ public class Spielfeld extends WcGraphics {
 	public Spielfeld() {
 		for (int i = 0; i < feld.length; i++) {
 			for (int j = 0; j < feld[i].length; j++) {
-				feld[i][j] = new WcRectangle(new WcPoint((double) i / 10, (double) j / 10),
-						new WcPoint(((double) i + 1) / 10, ((double) j + 1) / 10), null, Color.black);
+				feld[i][j] = new WcRectangle(new WcPoint((double) i / feld.length, (double) j / feld.length),
+						new WcPoint(((double) i + 1) / feld.length, ((double) j + 1) / feld.length), null, Color.black);
 				list.add(feld[i][j]);
 			}
 		}
